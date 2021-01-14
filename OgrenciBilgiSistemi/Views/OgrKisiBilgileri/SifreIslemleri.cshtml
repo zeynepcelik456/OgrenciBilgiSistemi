@@ -1,0 +1,60 @@
+﻿@model OgrData.Models.TblLogin
+
+@{
+    ViewData["Title"] = "SifreIslemleri";
+    Layout = "~/Views/Shared/_LayoutMenu.cshtml";
+}
+<div class="container">
+
+    <div class="row">
+        <form asp-action="SifreIslemleri" style="width:100%">
+            <div class="col-sm-6">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">ŞİFRE DEĞİŞTİRME</div>
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <label asp-for="Sıfre" class="control-label">Eski Şifreniz</label>
+                            <input asp-for="Sıfre" class="form-control" />
+                            <span asp-validation-for="Sıfre" class="text-danger"></span>
+
+
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Sıfre" class="control-label">Yeni Şifreniz</label>
+                            <input class="form-control" />
+                            <span asp-validation-for="Sıfre" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="submit" value="Değiştir" class="btn btn-primary" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">YENİ ŞİFRE OLUŞTURURKEN</div>
+                    <div class="panel-body">
+                        <p>Yeni Şifreniz</p>
+                        <ul>
+                            <li>En Az 9 Karakterden Oluşmalıdır,</li>
+                            <li>En Fazla 15 Karakterden Oluşmalıdır,</li>
+                            <li>En Az 1 adet Rakam Bulunmalıdır,  </li>
+                            <li>En Az 1 adet Büyük Harf Bulunmalıdır, </li>
+                            <li>En Az 1 adet Küçük Harf Bulunmalıdır.</li>
+
+                        </ul>
+                        <br />
+                        <br />
+                        <br />
+                    </div>
+                </div>
+            </div>
+        </form>
+
+    </div>
+
+</div>
+
+ 

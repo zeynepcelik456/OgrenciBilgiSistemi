@@ -1,0 +1,50 @@
+﻿@model OgrData.Models.TblLogin
+
+@{
+    ViewData["Title"] = "BilgiGoruntule";
+    Layout = "~/Views/Shared/_LayoutMenu.cshtml";
+}
+
+<div class="container">
+    <div class="panel panel-primary">
+        <div class="panel-heading">Kişisel Bilgiler</div>
+        <div class="panel-body">
+            <h2>  @Html.DisplayFor(model => model.OgrAd)   @Html.DisplayFor(model => model.OgrSoyad)</h2>
+            <br />
+            <div class="card">
+                <img src="/image/signinlogo.png" alt="Avatar" style="width:100%">
+                <div class="container" style=" padding: 2px 16px;">
+                    <h4><b>John Doe</b></h4>
+                    <p>Architect & Engineer</p>
+                </div>
+            </div>
+            @*<img class="rounded-circle" src="" style="width:150px; height:150px;" />*@
+            <div class="row" style="width:50%">
+
+                <div class="col-sm-6">
+
+                    Okul numarası : @Html.DisplayFor(model => model.OkulNo)
+                </div>
+
+                <div class="col-sm-4">
+
+                </div>
+                <div class="col-sm-2">
+
+                </div>
+                <br />
+                <div class="col-sm-6">
+                    Öğrenci şifresi :  @Html.DisplayFor(model => model.Sıfre)
+                </div>
+                <div class="col-sm-6">
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+    </div>
+</div>
+

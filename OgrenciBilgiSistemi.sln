@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OgrenciBilgiSistemi", "OgrenciBilgiSistemi\OgrenciBilgiSistemi.csproj", "{4619AC5B-3D4B-4CA7-9B69-03BE09F60BC2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OgrData", "OgrData\OgrData.csproj", "{D6BE8B1C-6FDE-4DE4-A291-1266B3A0FD49}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4619AC5B-3D4B-4CA7-9B69-03BE09F60BC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4619AC5B-3D4B-4CA7-9B69-03BE09F60BC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4619AC5B-3D4B-4CA7-9B69-03BE09F60BC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4619AC5B-3D4B-4CA7-9B69-03BE09F60BC2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6BE8B1C-6FDE-4DE4-A291-1266B3A0FD49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6BE8B1C-6FDE-4DE4-A291-1266B3A0FD49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6BE8B1C-6FDE-4DE4-A291-1266B3A0FD49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6BE8B1C-6FDE-4DE4-A291-1266B3A0FD49}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2A2B1EA9-AEF1-4BAD-A2BE-67A7FF00B0FF}
+	EndGlobalSection
+EndGlobal

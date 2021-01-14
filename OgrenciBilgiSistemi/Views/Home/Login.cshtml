@@ -1,0 +1,32 @@
+﻿@model OgrenciBilgiSistemi.Models.UsersClass
+
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+
+<div class="registration-form">
+    <form asp-action="Login">
+
+        <div>
+            <img class="rounded-circle mx-auto d-block" src="/image/signinlogo.png" style="width:320px; height:320px;" />
+        </div>
+
+        <div class="form-group">
+            <input type="text" asp-for="userName" class="form-control  item" placeholder="Okul numarası" />
+            <span asp-validation-for="userName" class="text-danger"></span>
+
+        </div>
+
+        <div class="form-group">
+            <input type="password" asp-for="userPassword" class="form-control  item" placeholder="Şifre" />
+            <span asp-validation-for="userPassword" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-success btn-block">Giriş Yap</button>
+        </div>
+
+    </form>
+</div>
+

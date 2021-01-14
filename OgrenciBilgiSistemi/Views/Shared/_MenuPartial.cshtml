@@ -1,0 +1,63 @@
+﻿
+@model OgrData.Models.TblLogin
+
+<nav class="navbar navbar-expand-sm  navbar-light" style="height: 80px;background-color: #f8f8f8">
+    <div>
+        <a class="navbar-brand" style="font-size:24px; position:absolute; left:0px; top:-5px;">Backend Bootcamp / Öğrenci</a>
+
+    </div>
+    <div>
+        <ul class="navbar-nav" style="position:absolute; left:10px; top:25px;">
+
+            <li class="nav-item">
+                <a class="nav-link" asp-controller="Ogrencı" asp-action="Index">Anasayfa</a>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                    Kişisel Bilgiler
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" asp-controller="OgrKisiBilgileri" asp-action="BilgiGoruntule">Bilgi Görüntüleme</a>
+                    <a class="dropdown-item" asp-controller="OgrKisiBilgileri" asp-action="SifreIslemleri">Şifre İşlemleri</a>
+                </div>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                    Öğrenci İşleri
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Açılan Dersler</a>
+                    <a class="dropdown-item" href="#">Harç Bilgileri</a>
+                </div>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                    Ders İşlemleri
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Yarıyıl Not Durumu</a>
+                    <a class="dropdown-item" href="#">Genel Not Durumu</a>
+                    <a class="dropdown-item" href="#">Ders Listesi</a>
+                    <a class="dropdown-item" href="#">Ders Programı</a>
+                    <a class="dropdown-item" href="#">Sınav Programı</a>
+                </div>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" asp-controller="" asp-action="">Çıkış</a>
+            </li>
+
+
+
+        </ul>
+    </div>
+    <div>
+
+        <p class="navbar-brand ">@Html.DisplayFor(m => m.OgrAd) @Html.DisplayFor(m => m.OgrSoyad)</p>
+        <p class="navbar-brand " style="top: 22px;">@Html.DisplayFor(m => m.OkulNo)</p>
+    </div>
+</nav>
+<br>
