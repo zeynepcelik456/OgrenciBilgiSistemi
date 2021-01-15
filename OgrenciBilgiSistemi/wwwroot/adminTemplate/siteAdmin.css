@@ -1,0 +1,59 @@
+﻿body {
+    font-family: "Lato", sans-serif;
+}
+
+#_img {
+    border-radius: 50%;
+    /*position: absolute;*/
+    height: 150px;
+    width: 150px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    /*top: 75px;
+            left: 54px;*/
+}
+
+.sidebar {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: beige;
+    overflow-x: hidden;
+    padding-top: 16px;
+    /*background: url("/snav2.png")*/
+}
+
+    .sidebar a {
+        padding: 10px 14px 10px 10px;
+        text-decoration: none;
+        font-size: 18px;
+        text-align: left;
+        color: black;
+        display: block;
+        top: 50px;
+        left: 10px;
+        text-align:center;
+    }
+
+        .sidebar a:hover {
+            color: #FFDD3C;
+        }
+
+.main {
+    margin-left: 250px; /* Same as the width of the sidenav */
+    padding: 0px 10px;
+}
+
+@@media screen and (max-height: 450px) {
+    .sidebar {
+        padding-top: 15px;
+    }
+
+        .sidebar a {
+            font-size: 18px;
+        }
+}

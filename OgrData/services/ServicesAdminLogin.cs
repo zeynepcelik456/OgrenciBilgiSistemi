@@ -11,9 +11,9 @@ namespace OgrData.services
         public int AdminLogin(string AdminUsername, string adminPassword)
         {
             int result = 0;
-            using (var services = new Models.DbOgrSistemContext())
+            using (var baglanti = new Models.DbOgrSistemContext())
             {
-                var adminLogin = services.TblAdmins.FirstOrDefault(x => x.AdminUserName == AdminUsername && x.AdminPasword == adminPassword);
+                var adminLogin = baglanti.TblAdmins.FirstOrDefault(x => x.AdminUserName == AdminUsername && x.AdminPasword == adminPassword);
                 result = adminLogin != null && adminLogin.Id > 0 ? adminLogin.Id : 0;
             }
 
