@@ -14,7 +14,7 @@ namespace OgrenciBilgiSistemi.Controllers
         public IActionResult BilgiGoruntule()
         {
             OgrData.Models.TblLogin user = new OgrData.Models.TblLogin();
-            OgrData.services.ServicesLogin srvs = new OgrData.services.ServicesLogin();
+            OgrData.services.ServicesGetOgr srvs = new OgrData.services.ServicesGetOgr();
             int id = (int)HttpContext.Session.GetInt32("LoginKontrol");
             user = srvs.GetByData(id);
             return View(user);
@@ -23,11 +23,24 @@ namespace OgrenciBilgiSistemi.Controllers
         public IActionResult SifreIslemleri()
         {
             OgrData.Models.TblLogin user = new OgrData.Models.TblLogin();
-            OgrData.services.ServicesLogin srvs = new OgrData.services.ServicesLogin();
+            OgrData.services.ServicesGetOgr srvs = new OgrData.services.ServicesGetOgr();
             int id = (int)HttpContext.Session.GetInt32("LoginKontrol");
             user = srvs.GetByData(id);
             return View(user);
         }
-       
+        [HttpPost]
+        public IActionResult SifreIslemleri(OgrData.Models.TblLogin s)
+        {
+
+            //OgrData.services.ServicesSifreGuncelleme srvs = new OgrData.services.ServicesSifreGuncelleme();
+            //srvs.sıfreGuncelle(s);
+            
+
+            OgrData.Models.DbOgrSistemContext db = new OgrData.Models.DbOgrSistemContext();
+            var ogr = db.TblLogins.Find(s.Id);
+            ogr.Sıfre = s.Sıfre;
+            db.SaveChanges();
+            return RedirectToAction("SifreIslemleri", "OgrKisiBilgileri");
+        }
     }
 }

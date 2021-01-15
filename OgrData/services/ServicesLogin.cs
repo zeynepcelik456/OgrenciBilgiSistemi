@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,17 +21,8 @@ namespace OgrData.services
             return result;
         }
 
-        public OgrData.Models.TblLogin GetByData(int id)
-        {
-            OgrData.Models.TblLogin result = new Models.TblLogin();
-            using (var services = new Models.DbOgrSistemContext())
-            {
-                 result = services.TblLogins.FirstOrDefault(x => x.Id==id);
-                
-            }
+       
+       
 
-            return result;
-
-        }
     }
 }
