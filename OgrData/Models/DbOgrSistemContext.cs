@@ -17,19 +17,19 @@ namespace OgrData.Models
         {
         }
 
+        public virtual DbSet<TblAdmin> TblAdmins { get; set; }
         public virtual DbSet<TblBolum> TblBolums { get; set; }
         public virtual DbSet<TblDer> TblDers { get; set; }
         public virtual DbSet<TblDuyuru> TblDuyurus { get; set; }
         public virtual DbSet<TblHarc> TblHarcs { get; set; }
         public virtual DbSet<TblLogin> TblLogins { get; set; }
         public virtual DbSet<TblOgrenciDer> TblOgrenciDers { get; set; }
-        public object TblDuyuru { get; internal set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
-
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
                 optionsBuilder.UseSqlServer("Server=DESKTOP-DNNFR5;Database=DbOgrSistem;Trusted_Connection=True;");
             }
         }
@@ -37,6 +37,21 @@ namespace OgrData.Models
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.HasAnnotation("Relational:Collation", "Turkish_CI_AS");
+
+            modelBuilder.Entity<TblAdmin>(entity =>
+            {
+                entity.ToTable("TblAdmin");
+
+                entity.Property(e => e.Id).HasColumnName("ID");
+
+                entity.Property(e => e.AdminAdı).HasMaxLength(30);
+
+                entity.Property(e => e.AdminPasword).HasMaxLength(30);
+
+                entity.Property(e => e.AdminSoyadı).HasMaxLength(30);
+
+                entity.Property(e => e.AdminUserName).HasMaxLength(30);
+            });
 
             modelBuilder.Entity<TblBolum>(entity =>
             {
