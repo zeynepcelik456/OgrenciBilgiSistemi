@@ -1,0 +1,39 @@
+﻿@model OgrData.Models.TblHarc
+
+@{
+    ViewData["Title"] = "HarcBilgi";
+    Layout = "~/Views/Shared/_LayoutMenu.cshtml";
+}
+
+<div class="container">
+    <div class="panel panel-primary">
+        <div class="panel-heading">Harç Bilgileri</div>
+        <div class="panel-body">
+            <h2 style="text-align:center;">  @Html.DisplayFor(model => model.OgrenciNavigation.OgrAd)   @Html.DisplayFor(model => model.OgrenciNavigation.OgrSoyad)</h2>
+            <br />
+            <table class="table">
+                <thead>
+                    <tr class="table-primary">
+                        <th> Okul Numarası</th>
+                        <th>Harc Tutarı</th>
+                        <th>Durum</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td> @Html.DisplayFor(model => model.OgrenciNavigation.OkulNo)</td>
+                        <td> @Html.DisplayFor(model => model.HarcTutarı) TL</td>
+                        <td>@Html.DisplayFor(model => model.Durum)</td>
+                    </tr>
+
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+

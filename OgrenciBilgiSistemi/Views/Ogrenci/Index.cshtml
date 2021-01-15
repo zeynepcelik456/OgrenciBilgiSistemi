@@ -1,9 +1,9 @@
-﻿
+﻿@model List<OgrData.Models.TblDuyuru>
+
 @{
-    ViewData["Title"] = "Anasayfa";
+    ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_LayoutMenu.cshtml";
 }
-
 
 <div class="row">
     <div class="col-sm-3">
@@ -16,11 +16,38 @@
         </div>
     </div>
     <div class="col-sm-6">
+
         <div class="panel panel-primary">
             <div class="panel-heading">DUYURULAR</div>
             <div class="panel-body">
+                @foreach (var x in Model)
+                {
+                <div class="alert alert-info">
 
-            </div>
+                    <p style="font-size:16px;font-weight:bold; text-align:center; padding-left:10px;">@x.Baslık</p>
+                    <p style=" text-align:justify; padding-left:10px;"></p>
+                    <p>@x.İcerik</p>
+
+
+                </div>
+                }
+                    @*<table class="table table-info " style="margin-top:20px">
+                <tr>
+                    <th>Duyuru</th>
+                    <th>İçerik</th>
+
+
+                </tr>
+                @foreach (var x in Model)
+                {
+                    <tr>
+                        <td>@x.Baslık</td>
+                        <td>@x.İcerik</td>
+
+                    </tr>
+                }
+            </table>*@
+                </div>
         </div>
     </div>
     <div class="col-sm-3">
@@ -28,9 +55,17 @@
             <div class="panel-heading">DİĞER BİLGİLER</div>
             <div class="panel-body">
                 <ul class="list-group">
-                    <li class="list-group-item">YÖNETMELİK</li>
-                    <li class="list-group-item">AKADEMİK TAKVİM</li>
-                    <li class="list-group-item">GÜNLÜK YEMEK LİSTESİ</li>
+                    <li class="list-group-item">
+                        <a href="http://odb.kocaeli.edu.tr/dosyalar/yonetmelikler/KOU%20%C3%96n%20Lisans%20ve%20Lisans%20E%C4%9Fitim-%C3%96%C4%9Fretim%20Y%C3%B6netmeli%C4%9Fi.pdf" target="_blank">YÖNETMELİK</a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://odb.kocaeli.edu.tr/dosyalar/2020-2021-Akademik-Takvim.pdf" target="_blank">AKADEMİK TAKVİM</a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://sksdb.kocaeli.edu.tr/upload/yemekListesi/04-01-2021_02.26:01_OCAK2021KARDELEN.pdf" target="_blank">
+                            GÜNLÜK YEMEK LİSTESİ
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>

@@ -13,13 +13,16 @@ namespace OgrenciBilgiSistemi.Controllers
     {
         public IActionResult Index()
         {
-            OgrData.Models.TblLogin user = new OgrData.Models.TblLogin();
-            OgrData.services.ServicesLogin srvs = new OgrData.services.ServicesLogin();
-            int id= (int)HttpContext.Session.GetInt32("LoginKontrol");
-            user = srvs.GetByData(id);
-            return View(user);
+
+
+            OgrData.services.ServicesDuyuru srvs = new OgrData.services.ServicesDuyuru();
+            List<OgrData.Models.TblDuyuru> duyurulist = srvs.GetByDuyuru();
+            return View(duyurulist);
+
+         
+
         }
 
-       
+
     }
 }

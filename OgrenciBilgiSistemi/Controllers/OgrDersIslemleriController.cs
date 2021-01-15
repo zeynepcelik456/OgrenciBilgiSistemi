@@ -13,43 +13,23 @@ namespace OgrenciBilgiSistemi.Controllers
     {
         public IActionResult YariyilNot()
         {
-            OgrData.Models.TblLogin user = new OgrData.Models.TblLogin();
-            OgrData.services.ServicesLogin srvs = new OgrData.services.ServicesLogin();
-            int id = (int)HttpContext.Session.GetInt32("LoginKontrol");
-            user = srvs.GetByData(id);
-            return View(user);
+            return View();
         }
         public IActionResult GenelNot()
         {
-            OgrData.Models.TblLogin user = new OgrData.Models.TblLogin();
-            OgrData.services.ServicesLogin srvs = new OgrData.services.ServicesLogin();
-            int id = (int)HttpContext.Session.GetInt32("LoginKontrol");
-            user = srvs.GetByData(id);
-            return View(user);
+            return View();
         }
         public IActionResult DersListesi()
         {
-            OgrData.Models.TblLogin user = new OgrData.Models.TblLogin();
-            OgrData.services.ServicesLogin srvs = new OgrData.services.ServicesLogin();
-            int id = (int)HttpContext.Session.GetInt32("LoginKontrol");
-            user = srvs.GetByData(id);
-            return View(user);
+            return View();
         }
         public IActionResult DersProgramı()
         {
-            OgrData.Models.TblLogin user = new OgrData.Models.TblLogin();
-            OgrData.services.ServicesLogin srvs = new OgrData.services.ServicesLogin();
-            int id = (int)HttpContext.Session.GetInt32("LoginKontrol");
-            user = srvs.GetByData(id);
-            return View(user);
+            return View();
         }
         public IActionResult SinavProgramı()
         {
-            OgrData.Models.TblLogin user = new OgrData.Models.TblLogin();
-            OgrData.services.ServicesLogin srvs = new OgrData.services.ServicesLogin();
-            int id = (int)HttpContext.Session.GetInt32("LoginKontrol");
-            user = srvs.GetByData(id);
-            return View(user);
+            return View();
         }
     }
 }

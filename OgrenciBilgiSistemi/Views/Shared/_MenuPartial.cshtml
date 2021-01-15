@@ -1,16 +1,16 @@
 ﻿
-@model OgrData.Models.TblLogin
+@*@model OgrData.Models.TblLogin*@
 
 <nav class="navbar navbar-expand-sm  navbar-light" style="height: 80px;background-color: #f8f8f8">
     <div>
         <a class="navbar-brand" style="font-size:24px; position:absolute; left:0px; top:-5px;">Backend Bootcamp / Öğrenci</a>
 
     </div>
-    <div>
-        <ul class="navbar-nav" style="position:absolute; left:10px; top:25px;">
+    <div >
+        <ul class="navbar-nav w-100" style="position:absolute; left:10px; top:25px;">
 
             <li class="nav-item">
-                <a class="nav-link" asp-controller="Ogrencı" asp-action="Index">Anasayfa</a>
+                <a class="nav-link" asp-controller="Ogrenci" asp-action="Index">Anasayfa</a>
             </li>
 
             <li class="nav-item dropdown">
@@ -29,7 +29,7 @@
                 </a>
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="#">Açılan Dersler</a>
-                    <a class="dropdown-item" href="#">Harç Bilgileri</a>
+                    <a class="dropdown-item" asp-controller="OgrIslemleri" asp-action="HarcBilgi">Harç Bilgileri</a>
                 </div>
             </li>
 
@@ -56,8 +56,8 @@
     </div>
     <div>
 
-        <p class="navbar-brand ">@Html.DisplayFor(m => m.OgrAd) @Html.DisplayFor(m => m.OgrSoyad)</p>
-        <p class="navbar-brand " style="top: 22px;">@Html.DisplayFor(m => m.OkulNo)</p>
+        @*<p class="navbar-brand ">@Html.DisplayFor(m => m.OgrAd) @Html.DisplayFor(m => m.OgrSoyad)</p>
+        <p class="navbar-brand " style="top: 22px;">@Html.DisplayFor(m => m.OkulNo)</p>*@
     </div>
 </nav>
 <br>

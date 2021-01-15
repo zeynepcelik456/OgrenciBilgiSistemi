@@ -13,27 +13,17 @@ namespace OgrenciBilgiSistemi.Controllers
     {
         public IActionResult HarcBilgi()
         {
-            OgrData.Models.TblLogin user = new OgrData.Models.TblLogin();
-            OgrData.services.ServicesLogin srvs = new OgrData.services.ServicesLogin();
+            OgrData.Models.TblHarc ogrHarc = new OgrData.Models.TblHarc();
+            OgrData.services.ServicesHarc bg = new OgrData.services.ServicesHarc();
             int id = (int)HttpContext.Session.GetInt32("LoginKontrol");
-            user = srvs.GetByData(id);
-            return View(user);
+            ogrHarc = bg.GetByHarc(id);
+            return View(ogrHarc);
+           
         }
-        public IActionResult HarcIade()
-        {
-            OgrData.Models.TblLogin user = new OgrData.Models.TblLogin();
-            OgrData.services.ServicesLogin srvs = new OgrData.services.ServicesLogin();
-            int id = (int)HttpContext.Session.GetInt32("LoginKontrol");
-            user = srvs.GetByData(id);
-            return View(user);
-        }
+     
         public IActionResult AcilanDersler()
         {
-            OgrData.Models.TblLogin user = new OgrData.Models.TblLogin();
-            OgrData.services.ServicesLogin srvs = new OgrData.services.ServicesLogin();
-            int id = (int)HttpContext.Session.GetInt32("LoginKontrol");
-            user = srvs.GetByData(id);
-            return View(user);
+            return View();
         }
     }
 }
