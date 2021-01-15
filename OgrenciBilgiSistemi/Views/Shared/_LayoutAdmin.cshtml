@@ -1,0 +1,27 @@
+﻿
+@{
+    Layout = null;
+}
+<link href="~/adminTemplate/bootstrap.min.css" rel="stylesheet" />
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="~/adminTemplate/siteAdmin.css" />
+    <style>
+       
+    </style>
+</head>
+<body>
+
+  <header>
+      <partial name="_AdminMenuPartial.cshtml" />
+  </header>
+
+    <div class="main">
+        @RenderBody()
+    </div>
+
+</body>
+</html>
