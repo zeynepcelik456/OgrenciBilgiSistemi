@@ -6,24 +6,23 @@ namespace OgrData.services
 {
     public class ServicesSifreGuncelleme
     {
-        //    OgrData.Models.DbOgrSistemContext db = new OgrData.Models.DbOgrSistemContext();
-        //    public OgrData.Models.TblLogin sıfreGuncelle(OgrData.Models.TblLogin s)
-        //    {
-        //        var ogr = db.TblLogins.Find(s.Id);
-        //        using ( OgrData.Models.DbOgrSistemContext db = new OgrData.Models.DbOgrSistemContext())
-        //        {
+        public int sıfreGuncelle(OgrData.Models.TblLogin s)
+        {
+            int result = 0;
+            using (OgrData.Models.DbOgrSistemContext db = new OgrData.Models.DbOgrSistemContext())
+            {
+                var ogr = db.TblLogins.Find(s.Id);
+                ogr.Sıfre = s.Sıfre;
+                db.SaveChanges();
 
-        //            ogr.Sıfre = s.Sıfre;
-        //            db.SaveChanges();
-
-        //        }
-
-        //        return ogr;
-
+            }
+            result = s.Id;
+            return result;
 
 
 
-        //    }
+
+        }
 
     }
 }

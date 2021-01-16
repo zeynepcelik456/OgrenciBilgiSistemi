@@ -32,15 +32,17 @@ namespace OgrenciBilgiSistemi.Controllers
         public IActionResult SifreIslemleri(OgrData.Models.TblLogin s)
         {
 
-            //OgrData.services.ServicesSifreGuncelleme srvs = new OgrData.services.ServicesSifreGuncelleme();
-            //srvs.sıfreGuncelle(s);
-            
+            OgrData.services.ServicesSifreGuncelleme srvs = new OgrData.services.ServicesSifreGuncelleme();
+            var result = srvs.sıfreGuncelle(s);
+            if (result > 0)
+            { return RedirectToAction("SifreIslemleri", new { Id = result }); }
+            return View();
 
-            OgrData.Models.DbOgrSistemContext db = new OgrData.Models.DbOgrSistemContext();
-            var ogr = db.TblLogins.Find(s.Id);
-            ogr.Sıfre = s.Sıfre;
-            db.SaveChanges();
-            return RedirectToAction("SifreIslemleri", "OgrKisiBilgileri");
+            //OgrData.Models.DbOgrSistemContext db = new OgrData.Models.DbOgrSistemContext();
+            //var ogr = db.TblLogins.Find(s.Id);
+            //ogr.Sıfre = s.Sıfre;
+            //db.SaveChanges();
+            //return RedirectToAction("SifreIslemleri", "OgrKisiBilgileri");
         }
     }
 }
