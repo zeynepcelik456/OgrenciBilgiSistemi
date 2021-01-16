@@ -1,0 +1,61 @@
+﻿@model IEnumerable<OgrData.Models.TblBolum>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-controller="Bolum" asp-action="BolumEkle" class="btn btn-info">Yeni Bölüm Oluştur</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Bölüm Adı
+            </th>
+            <th>
+                Bölüm Açıklaması
+            </th>
+            <th>
+                Bölüm E-posta
+            </th>
+            <th>
+                Güncelle
+            </th>
+            <th>
+                Sil
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BolumAdı)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BolumAcıklama)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BolumEposta)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-success">Güncelle</a>
+                </td>
+                <td>
+                                   
+                        @Html.ActionLink("Sil", "BolumSil", "Bolum",
+                        new { bolumId = item.Id },
+                        new { @class="btn btn-danger"})
+                   
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>

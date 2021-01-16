@@ -13,6 +13,7 @@ namespace OgrData.services
             OgrData.Models.TblLogin result = new Models.TblLogin();
             using (var services = new Models.DbOgrSistemContext())
             {
+                //ınclude kısmı ekranda ilişkili tabloların aracısıyla görünmesini sağlar
                 result = services.TblLogins.Include(x => x.OgrBolumNavigation).FirstOrDefault(x => x.Id == id);
 
             }

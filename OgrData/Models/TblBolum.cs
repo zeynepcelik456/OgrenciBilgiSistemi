@@ -20,5 +20,12 @@ namespace OgrData.Models
 
         public virtual ICollection<TblDer> TblDers { get; set; }
         public virtual ICollection<TblLogin> TblLogins { get; set; }
+
+        internal class Find
+        {
+            public Find()
+            {
+            }
+        }
     }
 }
