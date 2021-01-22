@@ -15,10 +15,11 @@
                     <form asp-action="SifreIslemleri" method="post">
                         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                         <input type="hidden" asp-for="Id" />
-
+                      
+                       
                         <div class="form-group">
-                            <label asp-for="Sıfre" class="control-label">Şifrenizi Değiştirebilirsiniz</label>
-                            <input asp-for="Sıfre" class="form-control" />
+                            <label asp-for="Sıfre" class="control-label">Şifrenizi değiştirebilirsiniz</label>
+                            <input asp-for="Sıfre"  class="form-control" />
                             <span asp-validation-for="Sıfre" class="text-danger"></span>
                         </div>
 

@@ -5,37 +5,34 @@
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h1>BolumEkle</h1>
+<h1>Bölüm Ekle</h1>
 
-<h4>TblBolum</h4>
+
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="BolumEkle" method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="BolumAdı" class="control-label"></label>
+                <label asp-for="BolumAdı" class="control-label">Bölüm Adı</label>
                 <input asp-for="BolumAdı" class="form-control" />
                 <span asp-validation-for="BolumAdı" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="BolumAcıklama" class="control-label"></label>
+                <label asp-for="BolumAcıklama" class="control-label">Bölüm Açıklaması</label>
                 <input asp-for="BolumAcıklama" class="form-control" />
                 <span asp-validation-for="BolumAcıklama" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="BolumEposta" class="control-label"></label>
+                <label asp-for="BolumEposta" class="control-label">Bölüm Eposta</label>
                 <input asp-for="BolumEposta" class="form-control" />
                 <span asp-validation-for="BolumEposta" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Ekle" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
 
