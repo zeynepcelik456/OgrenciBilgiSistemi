@@ -22,9 +22,4 @@
     <ProjectReference Include="..\OgrData\OgrData.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Controllers\Admin\" />
-    <Folder Include="Views\OgrDersIslemleri\" />
-  </ItemGroup>
-
 </Project>

@@ -17,6 +17,7 @@ namespace OgrData.Models
         public string DersKodu { get; set; }
         public int? DersKredi { get; set; }
         public int? Bolum { get; set; }
+        public int? Donem { get; set; }
 
         public virtual TblBolum BolumNavigation { get; set; }
         public virtual ICollection<TblOgrenciDer> TblOgrenciDers { get; set; }

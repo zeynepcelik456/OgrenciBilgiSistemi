@@ -1,0 +1,100 @@
+﻿@model IEnumerable<OgrData.Models.TblDer>
+
+@{
+    ViewData["Title"] = "DersListesi";
+    Layout = "~/Views/Shared/_LayoutMenu.cshtml";
+}
+
+<div class="container">
+    <div class="panel panel-primary">
+        <div class="panel-heading">Ders Listesi</div>
+        <div class="panel-body">
+            <br />
+            <h4>1.Dönem Dersleri</h4>            <table class="table">
+                <thead>
+                    <tr class="table-primary">
+                        <th>Ders Adı</th>
+                        <th>Ders Kodu</th>
+                        <th>Ders Dönemi</th>
+                        <th>Ders Kredisi</th>
+                        <th>Bölüm</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        if (item.Donem == 1)
+                        {
+                            <tr>
+                                <td>
+                                    <b> @Html.DisplayFor(modelItem => item.DersAdi)</b>
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DersKodu)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Donem)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DersKredi)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.BolumNavigation.BolumAcıklama)
+                                </td>
+
+                            </tr>
+                        }
+
+                    }
+
+                </tbody>
+            </table>
+            <br />
+            <h4>2.Dönem Dersleri</h4>
+            <table class="table">
+                <thead>
+                    <tr class="table-primary">
+                        <th>Ders Adı</th>
+                        <th>Ders Kodu</th>
+                        <th>Ders Dönemi</th>
+                        <th>Ders Kredisi</th>
+                        <th>Bölüm</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @foreach (var item in Model)
+                    {@if (item.Donem == 2)
+                        {
+                            <tr>
+                                <td>
+                                    <b> @Html.DisplayFor(modelItem => item.DersAdi)</b>
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DersKodu)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Donem)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DersKredi)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.BolumNavigation.BolumAcıklama)
+                                </td>
+
+                            </tr>
+                        }
+
+                }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+
+

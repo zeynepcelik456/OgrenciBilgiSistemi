@@ -45,13 +45,17 @@
                     @Html.DisplayFor(modelItem => item.BolumEposta)
                 </td>
                 <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-success">Güncelle</a>
+                    @Html.ActionLink("Guncelle", "BolumGetir", "Bolum",
+                        new { id = item.Id },
+                        new { @class = "btn btn-success" })
                 </td>
                 <td>
                                    
                         @Html.ActionLink("Sil", "BolumSil", "Bolum",
                         new { bolumId = item.Id },
-                        new { @class="btn btn-danger"})
+                        new { @class="btn btn-danger"}
+                        //new { onclick = "return confirm('Are sure wants to delete?');" }
+                       )
                    
                 </td>
 

@@ -31,6 +31,17 @@ namespace OgrData.services.AdminServices
 
             return deger.Id;
         }
+        public Models.TblBolum GetByIdBolum(int id)
+        {
+            Models.TblBolum bolum = new Models.TblBolum();
+            using (var baglanti = new Models.DbOgrSistemContext())
+            {
+
+                bolum = baglanti.TblBolums.Find(id);
+
+            }
+            return bolum;
+        }
 
         public int UpdateBolum(Models.TblBolum deger)
         {
@@ -57,8 +68,8 @@ namespace OgrData.services.AdminServices
                 }
                 baglanti.SaveChanges();
             }
-            
+
         }
- 
+
     }
 }

@@ -21,6 +21,8 @@ namespace OgrenciBilgiSistemi.Controllers.Admin
         }
         public IActionResult BolumEkle()
         {
+
+          
             return View();
         }
 
@@ -29,6 +31,20 @@ namespace OgrenciBilgiSistemi.Controllers.Admin
         {
             var servis = new OgrData.services.AdminServices.BolumServices();
             var x = servis.AddBolum(eklenecekDeger);
+            return RedirectToAction("Index", "Bolum");
+        }
+        public IActionResult BolumGetir(int id)
+        {
+            var servis = new OgrData.services.AdminServices.BolumServices();
+            OgrData.Models.TblBolum bolum = servis.GetByIdBolum(id);
+            return View("BolumGetir",bolum);
+
+        }
+        [HttpPost]
+        public IActionResult BolumGuncelle(OgrData.Models.TblBolum guncellenecekDeger)
+        {
+            var servis = new OgrData.services.AdminServices.BolumServices();
+            var x = servis.UpdateBolum(guncellenecekDeger);
             return RedirectToAction("Index", "Bolum");
         }
 
